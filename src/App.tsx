@@ -3,31 +3,32 @@ import { Routes, Route, Link } from 'react-router-dom';
 import './App.scss';
 import Header from './components/Header/Header';
 import FrameItem from './components/FrameItem';
+import FuncState from './components/FuncState/FuncState';
 
 // url to all, path to frame
 export const links = [
   {
-    title: 'Информация о функциональном состоянии ОЭС АСПОС ОКП и ОКН',
-    path: '#',
+    title: 'Функциональное состояние ОЭС',
+    path: 'functional-state',
     url: 'https://omcc.ru/'
   },
   {
-    title: 'Информация о результатах выполнения плана применения ОЭС АСПОС ОКП, ОКН и привлекаемых ОЭС',
+    title: 'Результаты выполнения плана применения',
     path: 'https://plan.ksoes.ru/?&dark',
     url: 'implementation-plan-results'
   },
   {
-    title: 'Информация о результатах обработки измерительной информации по КО в АЦУК-М',
+    title: 'Результаты обработки измерительной информации по КО',
     path: '#',
     url: 'measurement-information-processing'
   },
   {
-    title: 'Информация о вычислительных процессах и загрузки вычислительных средств',
+    title: 'Вычислительные процессы и загрузка вычислительных средств',
     path: '#',
     url: 'computing'
   },
   {
-    title: 'Информация о взаимодействие АЦУК-М с ГИАЦ-М, ОЭС АСПОС ОКП, ОКН и привлекаемыми ОЭС',
+    title: 'Информационное взаимодействие АЦУК-М',
     path: '#s',
     url: 'interaction'
   }
@@ -43,6 +44,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Main />} />
           <Route path={links[1].url} element={<FrameItem title={links[1].title} path={links[1].path} />} />
+          <Route path={'/test'} element={<FuncState />} />
           <Route path='*' element={<>Такой страницы не существует</>} />
         </Routes>
       </div>
@@ -57,7 +59,10 @@ const Main: React.FC<{}> = () => {
   return <div className="menu">
     <div className='buttons'>
       {
-        links.map(link => <Link to={link.url} className={`link`} target="_blanck">{link.title} </Link>)
+        links.map(link => <Link to={link.url} className={`link`}
+          target="_blanck"
+          onClick={() => window.open(link.url)}
+        >{link.title} </Link>)
       }
     </div>
   </div>
