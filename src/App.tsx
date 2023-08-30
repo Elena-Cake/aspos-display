@@ -3,6 +3,7 @@ import { Routes, Route, Link } from 'react-router-dom';
 import './App.scss';
 import Header from './components/Header/Header';
 import FrameItem from './components/FrameItem';
+
 // url to all, path to frame
 export const links = [
   {
