@@ -19,22 +19,22 @@ function App() {
     },
     {
       title: 'Информация о результатах выполнения плана применения ОЭС АСПОС ОКП, ОКН и привлекаемых ОЭС',
-      path: '#',
+      path: 'https://omcc.ru/',
       url: 'implementation-plan-results'
     },
     {
       title: 'Информация о результатах обработки измерительной информации по КО в АЦУК-М',
-      path: '#',
+      path: 'https://omcc.ru/',
       url: 'measurement-information-processing'
     },
     {
       title: 'Информация о вычислительных процессах и загрузки вычислительных средств',
-      path: '#',
+      path: 'https://omcc.ru/',
       url: 'computing'
     },
     {
       title: 'Информация о взаимодействие АЦУК-М с ГИАЦ-М, ОЭС АСПОС ОКП, ОКН и привлекаемыми ОЭС',
-      path: '#',
+      path: 'https://omcc.ru/',
       url: 'interaction'
     }
   ]
@@ -53,6 +53,7 @@ function App() {
         </div>
         <Routes>
           {links.map(link => <Route path={link.url} element={<FrameItem path={link.path} title={link.title} />} />)}
+          <Route path='*' element={<>Простите, такой страницы нет</>} />
         </Routes>
       </div>
     </div>
