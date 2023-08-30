@@ -1,23 +1,15 @@
+@import '../../App.scss';
+
 .header {
     width: 100%;
     grid-area: head;
-    min-height: 40px;
+    min-height: $header-height;
     background-color: rgb(3, 114, 188);
     display: grid;
-    grid-template-columns: auto minmax(50px, 200px) 120px;
-    gap: 2%;
+    grid-template-columns: 20px auto;
+    gap: 10px;
+    text-align: left;
     grid-template-areas: 'dot login logout';
     color: #ffffff;
     align-items: center;
-}
-
-.header__name {
-    grid-area: login;
-    text-align: right;
-}
-
-.header__logout {
-    grid-area: logout;
-    margin: 10px;
-    color: #ffffff;
 }

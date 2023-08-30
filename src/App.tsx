@@ -44,7 +44,6 @@ function App() {
       <Header />
       <div className="main__body">
         <div className='menu'>
-          <h1 className='title'>Программа отображения</h1>
           {
             links.map((link, i) => {
               const handleActiveLink = () => { setActiveLink(i) }
