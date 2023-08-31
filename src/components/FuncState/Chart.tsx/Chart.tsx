@@ -1,7 +1,14 @@
 import React from 'react'
 import { LineChart, Line, CartesianGrid, XAxis, YAxis, Tooltip } from 'recharts';
 
-const dataTest = [{ name: 'Page A', uv: 400, pv: 2400 }, { name: 'Page b', uv: 450, pv: 2500 }];
+const dataTest = [
+    { name: 'Page A', uv: 400, pv: 1400 },
+    { name: 'Page b', uv: 150, pv: 1900 },
+    { name: 'Page c', uv: 250, pv: 700 },
+    { name: 'Page d', uv: 480, pv: 2300 },
+    { name: 'Page e', uv: 550, pv: 1000 },
+    { name: 'Page f', uv: 450, pv: 500 }
+];
 type dataType = typeof dataTest
 
 const Chart = () => {

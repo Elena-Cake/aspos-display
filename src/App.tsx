@@ -29,7 +29,7 @@ export const links = [
   },
   {
     title: 'Информационное взаимодействие АЦУК-М',
-    path: '#s',
+    path: '#',
     url: 'interaction'
   }
 ]
@@ -59,11 +59,13 @@ const Main: React.FC<{}> = () => {
   return <div className="menu">
     <div className='buttons'>
       {
-        links.map(link => <Link to={link.url} className={`link`}
-          target="_blanck"
+        links.map(link => <Link to={'/'} className={`link`}
           onClick={() => window.open(link.url)}
         >{link.title} </Link>)
       }
+      <Link to={'/'} className={`link link__test`}
+        onClick={() => window.open('/test')}
+      >test chart </Link>
     </div>
   </div>
 }
