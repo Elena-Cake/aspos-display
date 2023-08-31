@@ -5,11 +5,13 @@
     grid-area: head;
     min-height: $header-height;
     background-color: rgb(3, 114, 188);
-    display: grid;
+    display: flex;
+    justify-content: center;
     grid-template-columns: 20px auto;
     gap: 10px;
-    text-align: left;
-    grid-template-areas: 'dot login logout';
+    text-align: center;
     color: #ffffff;
     align-items: center;
 }
+
+.logo {}

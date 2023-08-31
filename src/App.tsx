@@ -9,12 +9,12 @@ import FuncState from './components/FuncState/FuncState';
 export const links = [
   {
     title: 'Функциональное состояние ОЭС',
-    path: 'functional-state',
-    url: 'https://omcc.ru/'
+    path: 'https://omcc.ru/',
+    url: 'functional-state'
   },
   {
     title: 'Результаты выполнения плана применения',
-    path: 'https://plan.ksoes.ru/?&dark',
+    path: 'https://plan.ksoes.ru/?s&dark',
     url: 'implementation-plan-results'
   },
   {
@@ -32,6 +32,7 @@ export const links = [
     path: '#',
     url: 'interaction'
   }
+
 ]
 type linksType = typeof links
 
@@ -43,7 +44,8 @@ function App() {
       <div className="main">
         <Routes>
           <Route path='/' element={<Main />} />
-          <Route path={links[1].url} element={<FrameItem title={links[1].title} path={links[1].path} />} />
+          {links.map((link, i) => <Route path={link.url} element={<FrameItem title={link.title} path={link.path} />} />)}
+          {/* <Route path={links[1].url} element={<FrameItem title={links[1].title} path={links[1].path} />} /> */}
           <Route path={'/test'} element={<FuncState />} />
           <Route path='*' element={<>Такой страницы не существует</>} />
         </Routes>
@@ -63,9 +65,10 @@ const Main: React.FC<{}> = () => {
           onClick={() => window.open(link.url)}
         >{link.title} </Link>)
       }
-      <Link to={'/'} className={`link link__test`}
+      {/* !!!!test */}
+      {/* <Link to={'/'} className={`link link__test`}
         onClick={() => window.open('/test')}
-      >test chart </Link>
+      >test chart </Link> */}
     </div>
   </div>
 }
