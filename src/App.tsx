@@ -4,6 +4,7 @@ import './App.scss';
 import Header from './components/Header/Header';
 import FrameItem from './components/FrameItem';
 import FuncState from './components/FuncState/FuncState';
+import InfoProcess from './components/InfoProcess/InfoProcess';
 
 // url to all, path to frame
 export const links = [
@@ -44,9 +45,12 @@ function App() {
       <div className="main">
         <Routes>
           <Route path='/' element={<Main />} />
-          {links.map((link, i) => <Route path={link.url} element={<FrameItem title={link.title} path={link.path} />} />)}
+          <Route path={links[0].url} element={<FuncState />} />
+          <Route path={links[2].url} element={<InfoProcess />} />
+
+          {links.map((link, i) => <Route key={i} path={link.url} element={<FrameItem title={link.title} path={link.path} />} />)}
           {/* <Route path={links[1].url} element={<FrameItem title={links[1].title} path={links[1].path} />} /> */}
-          <Route path={'/test'} element={<FuncState />} />
+          {/* <Route path={'/test'} element={<FuncState />} /> */}
           <Route path='*' element={<>Такой страницы не существует</>} />
         </Routes>
       </div>
@@ -61,7 +65,7 @@ const Main: React.FC<{}> = () => {
   return <div className="menu">
     <div className='buttons'>
       {
-        links.map(link => <Link to={'/'} className={`link`}
+        links.map((link, i) => <Link key={i} to={'/'} className={`link`}
           onClick={() => window.open(link.url)}
         >{link.title} </Link>)
       }

@@ -8,7 +8,6 @@ const Header: React.FC = () => {
     const [title, setTitle] = React.useState('')
 
     React.useEffect(() => {
-        console.log(pathname)
         const titleLink = links.find((link) => link.url === pathname.substring(1))?.title
         if (titleLink && pathname !== '/') {
             setTitle(titleLink)
