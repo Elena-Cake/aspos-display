@@ -42,7 +42,8 @@ const FuncState = () => {
             const { data } = await axios.get(`https://api.omcc.ru/api/view/state`)
             setData(changeData(data))
         } catch (err) {
-            console.log(err)
+            // @ts-ignore
+            if (err.code === "ERR_NETWORK") console.log("reload please")
         }
     }
 

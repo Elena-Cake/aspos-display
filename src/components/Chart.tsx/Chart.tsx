@@ -4,6 +4,7 @@ import axios from 'axios';
 import { TIME_UPDATE_REPORT_CHARTS } from '../../assets/constans';
 import { ResType, chartsType, } from '../../types/types';
 import './Charts.scss'
+import Loading from '../Loading';
 
 
 let intervalId: NodeJS.Timeout;
@@ -84,7 +85,7 @@ const Chart = () => {
 
     return (
         <>
-            {!dataCharts && <>Загрузка...</>}
+            {!dataCharts && <Loading />}
             {dataCharts &&
                 <div className='charts'>
                     <p>Данные получены за {date}</p>

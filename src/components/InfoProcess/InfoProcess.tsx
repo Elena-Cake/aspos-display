@@ -69,7 +69,11 @@ const InfoProcess = () => {
             const { data } = await axios.get(`https://api.omcc.ru/api/view/orbmeas`)
             setData(data)
         } catch (err) {
-            console.log(err)
+            // @ts-ignore
+            if (err.code === "ERR_NETWORK") {
+                console.log("reload please")
+                return
+            }
         }
     }
 
