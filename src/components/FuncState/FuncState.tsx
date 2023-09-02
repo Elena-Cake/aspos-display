@@ -1,6 +1,7 @@
 import React from 'react'
 import { AgGridReact } from 'ag-grid-react';
 import Table from '../Table/Table';
+import axios from 'axios';
 
 
 const data = {
@@ -73,11 +74,39 @@ const data = {
         ]
     ]
 }
-
+let intervalId: NodeJS.Timeout;
 const FuncState = () => {
+    const [data, setData] = React.useState(null)
+    const TIME_UPDATE_REPORT = 1000 * 60
+
+    const fetchData = async () => {
+        try {
+            const { data } = await axios.get(`https://api.omcc.ru/api/view/state`)
+            setData(data)
+        } catch (err) {
+            console.log(err)
+        }
+    }
+
+    // setInterval and clean it
+    function startSendingRequests() {
+        intervalId = setInterval(() => {
+            fetchData()
+        }, TIME_UPDATE_REPORT);
+    }
+    function stopSendingRequests() {
+        console.log('stop requect sending state')
+        clearInterval(intervalId);
+    }
+
+    React.useEffect(() => {
+        fetchData()
+        startSendingRequests()
+    }, []);
+    React.useEffect(() => () => stopSendingRequests(), []);
 
     return (
-        <Table data={data} />
+        <Table data={data} typeTable='state' />
     )
 }
 
