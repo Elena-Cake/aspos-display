@@ -1,6 +1,8 @@
 import React from 'react'
 import Table from '../Table/Table';
 import axios from 'axios';
+import { TIME_UPDATE_REPORT_TABLES } from '../../assets/constans';
+import { ResType } from '../../types/types';
 
 const data = {
     columns: [
@@ -60,8 +62,7 @@ const data = {
 let intervalId: NodeJS.Timeout;
 const InfoProcess = () => {
 
-    const [data, setData] = React.useState(null)
-    const TIME_UPDATE_REPORT = 1000 * 60
+    const [data, setData] = React.useState<ResType | null>(null)
 
     const fetchData = async () => {
         try {
@@ -76,7 +77,7 @@ const InfoProcess = () => {
     function startSendingRequests() {
         intervalId = setInterval(() => {
             fetchData()
-        }, TIME_UPDATE_REPORT);
+        }, TIME_UPDATE_REPORT_TABLES);
     }
     function stopSendingRequests() {
         console.log('stop requect sending state')

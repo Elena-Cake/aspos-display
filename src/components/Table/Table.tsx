@@ -1,11 +1,9 @@
 import React from 'react'
 import './Table.scss'
+import { ResType } from '../../types/types'
 
 type Props = {
-    data: {
-        columns: string[]
-        table: any[][]
-    } | null
+    data: ResType | null
     typeTable?: string
 }
 
