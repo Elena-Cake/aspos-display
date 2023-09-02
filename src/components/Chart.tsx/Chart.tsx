@@ -20,6 +20,7 @@ type dataType = typeof dataTest
 const Chart = () => {
 
     const [widthCharts, setWidthCharts] = React.useState<number>(window.innerWidth * 0.9)
+    const [heightCharts, setHeightCharts] = React.useState<number>(window.innerHeight * 0.1)
 
     const [date, setDate] = React.useState<string>('null')
     const [dataCharts, setDataCharts] = React.useState<chartsType[] | null>(null)
@@ -86,39 +87,39 @@ const Chart = () => {
             {!dataCharts && <>Загрузка...</>}
             {dataCharts &&
                 <div className='charts'>
-                    <h2>Данные получены за {date}</h2>
-                    <LineChart width={widthCharts} height={200} data={dataCharts} margin={{ top: 15, right: 20, bottom: 15, left: 10 }}>
+                    <p>Данные получены за {date}</p>
+                    <LineChart width={widthCharts} height={heightCharts * 2} data={dataCharts} margin={{ top: 15, right: 20, bottom: 15, left: 10 }}>
                         <Line name="% использования cpu" type="monotone" dataKey="cpu" stroke="#0324ff" strokeWidth={3} r={1} />
                         <Line name="% доступной памяти" type="monotone" dataKey="mem" stroke="#ffb303" strokeWidth={3} r={1} />
                         <CartesianGrid stroke="#ccc" strokeDasharray="5 5" />
                         <XAxis dataKey="name" />
-                        <YAxis />
+                        <YAxis width={80} />
                         <Tooltip />
                         <Legend verticalAlign="top" height={36} />
                     </LineChart>
-                    <LineChart width={widthCharts} height={100} data={dataCharts} margin={{ top: 15, right: 20, bottom: 15, left: 10 }}>
+                    <LineChart width={widthCharts} height={heightCharts} data={dataCharts} margin={{ top: 15, right: 20, bottom: 15, left: 10 }}>
                         <Line name="% использования cpu" type="monotone" dataKey="swap" stroke="#009a0d" strokeWidth={3} r={1} />
                         <CartesianGrid stroke="#ccc" strokeDasharray="5 5" />
                         <XAxis dataKey="name" />
-                        <YAxis />
+                        <YAxis width={80} />
                         <Tooltip />
                         <Legend verticalAlign="top" height={36} />
                     </LineChart>
-                    <AreaChart width={widthCharts} height={200} data={dataCharts} margin={{ top: 15, right: 20, bottom: 15, left: 10 }}>
+                    <AreaChart width={widthCharts} height={heightCharts * 2} data={dataCharts} margin={{ top: 15, right: 20, bottom: 15, left: 10 }}>
                         <Area name="Получено по сети байт" type="monotone" dataKey="res" stroke="#8884d8" fill="#8884d8" strokeWidth={2} />
-                        <Area name="Отпрвлено но сети байт" type="monotone" dataKey="send" stroke="#b00153" fill="#b00153" strokeWidth={2} />
+                        <Area name="Отправлено но сети байт" type="monotone" dataKey="send" stroke="#b00153" fill="#b00153" strokeWidth={2} />
                         <CartesianGrid stroke="#ccc" strokeDasharray="5 5" />
                         <XAxis dataKey="name" />
-                        <YAxis />
+                        <YAxis width={80} />
                         <Tooltip />
                         <Legend verticalAlign="top" height={36} />
                     </AreaChart >
-                    <AreaChart width={widthCharts} height={200} data={dataCharts} margin={{ top: 15, right: 20, bottom: 15, left: 10 }}>
+                    <AreaChart width={widthCharts} height={heightCharts * 2} data={dataCharts} margin={{ top: 15, right: 20, bottom: 15, left: 10 }}>
                         <Area name="Прочитано на диск байт" type="monotone" dataKey="cpu" stroke="#6a01b0" fill="#6a01b0" strokeWidth={2} />
-                        <Area name="Записано на диск байт" type="monotone" dataKey="mem" stroke="#e75fff99" fill="#e75fff99" strokeWidth={2} />
+                        <Area name="Записано на диск байт" type="monotone" dataKey="mem" stroke="#e13ffeb9" fill="#e13ffeb9" strokeWidth={2} />
                         <CartesianGrid stroke="#ccc" strokeDasharray="5 5" />
                         <XAxis dataKey="name" />
-                        <YAxis />
+                        <YAxis width={80} />
                         <Tooltip />
                         <Legend verticalAlign="top" height={36} />
                     </AreaChart>
