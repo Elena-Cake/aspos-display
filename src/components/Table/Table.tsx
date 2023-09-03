@@ -5,12 +5,12 @@ import Loading from '../Loading'
 
 type Props = {
     data: ResType | null
-    typeTable?: string
+    isTypeState: boolean
 }
 
 
-const Table: React.FC<Props> = ({ data, typeTable = '' }) => {
-    const isTypeState = typeTable === 'state'
+const Table: React.FC<Props> = ({ data, isTypeState }) => {
+
 
     return (
         <>
