@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Elena-Cake/aspos-display/static/css/main.c3338251.css",
+    "main.js": "/Elena-Cake/aspos-display/static/js/main.d5acaa3c.js",
+    "index.html": "/Elena-Cake/aspos-display/index.html",
+    "main.c3338251.css.map": "/Elena-Cake/aspos-display/static/css/main.c3338251.css.map",
+    "main.d5acaa3c.js.map": "/Elena-Cake/aspos-display/static/js/main.d5acaa3c.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c3338251.css",
+    "static/js/main.d5acaa3c.js"
+  ]
+}
