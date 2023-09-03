@@ -1,24 +1,18 @@
 import React from 'react'
 import { LineChart, Line, CartesianGrid, XAxis, YAxis, Tooltip, AreaChart, Area, Legend } from 'recharts';
 import axios from 'axios';
-import { TIME_UPDATE_REPORT_CHARTS } from '../../assets/constans';
-import { ResType, chartsType, } from '../../types/types';
+import { INFO_DATA, TIME_UPDATE_REPORT_CHARTS } from '../../assets/constans';
+import { InfoTextsType, ResType, chartsType, } from '../../types/types';
 import './Charts.scss'
-import Loading from '../Loading';
+import Loading from '../InfoText';
+import InfoText from '../InfoText';
 
 
 let intervalId: NodeJS.Timeout;
-const dataTest = [
-    { name: 'Page A', uv: 400, pv: 1400 },
-    { name: 'Page b', uv: 150, pv: 1900 },
-    { name: 'Page c', uv: 250, pv: 700 },
-    { name: 'Page d', uv: 480, pv: 2300 },
-    { name: 'Page e', uv: 550, pv: 1000 },
-    { name: 'Page f', uv: 450, pv: 500 }
-];
-type dataType = typeof dataTest
 
 const Chart = () => {
+
+    const [infoData, setInfoData] = React.useState<InfoTextsType | null>(INFO_DATA.loading)
 
     const [widthCharts, setWidthCharts] = React.useState<number>(window.innerWidth * 0.9)
     const [heightCharts, setHeightCharts] = React.useState<number>(window.innerHeight * 0.1)
@@ -49,11 +43,14 @@ const Chart = () => {
 
     const fetchData = async () => {
         try {
+            setInfoData(INFO_DATA.loading)
             const { data } = await axios.get(`https://api.omcc.ru/api/view/server`)
             changeDataStructure(data as ResType)
             // setData(data)
         } catch (err) {
+            setInfoData(INFO_DATA.networkError)
             console.log(err)
+            return
         }
     }
 
@@ -85,7 +82,7 @@ const Chart = () => {
 
     return (
         <>
-            {!dataCharts && <Loading />}
+            {!dataCharts && <InfoText infoData={infoData} />}
             {dataCharts &&
                 <div className='charts'>
                     <p>Данные получены за {date}</p>

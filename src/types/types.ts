@@ -1,3 +1,5 @@
+import { INFO_DATA } from "../assets/constans"
+
 export type ResType = {
     columns: string[]
     table: any[][]
@@ -13,3 +15,5 @@ export type chartsType = {
     read: number
     write: number
 }
+
+export type InfoTextsType = typeof INFO_DATA.loading

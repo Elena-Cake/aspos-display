@@ -1,7 +1,8 @@
 import React from 'react'
 import './Table.scss'
 import { ResType } from '../../types/types'
-import Loading from '../Loading'
+import InfoText from '../InfoText'
+import { INFO_DATA } from '../../assets/constans'
 
 type Props = {
     data: ResType | null
@@ -14,7 +15,6 @@ const Table: React.FC<Props> = ({ data, isTypeState }) => {
 
     return (
         <>
-            {!data && <Loading />}
             {data &&
                 < div className='table__wrapper'>
                     <table className='table'>
