@@ -1,6 +1,8 @@
+export const IS_PAGES_DEPLOY: boolean = false
+// export const IS_PAGES_DEPLOY: boolean = true
+
 // export const TIME_UPDATE_REPORT_TABLES = 5000 * 60
 // export const TIME_UPDATE_REPORT_CHARTS = 5000 * 60
-
 
 export const TIME_UPDATE_REPORT_TABLES = 1000 * 60
 export const TIME_UPDATE_REPORT_CHARTS = 5000

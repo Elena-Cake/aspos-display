@@ -7,34 +7,34 @@ import FuncState from './components/FuncState/FuncState';
 import InfoProcess from './components/InfoProcess/InfoProcess';
 import Chart from './components/Chart.tsx/Chart';
 import InfoText from './components/InfoText';
-import { INFO_DATA } from './assets/constans';
+import { INFO_DATA, IS_PAGES_DEPLOY } from './assets/constans';
 
 // url to all, path to frame
 export const links = [
   {
     title: 'Функциональное состояние ОЭС',
     path: 'https://omcc.ru/',
-    url: '#/functional-state'
+    url: IS_PAGES_DEPLOY ? '#/functional-state' : 'functional-state'
   },
   {
     title: 'Результаты выполнения плана применения',
     path: 'https://plan.ksoes.ru/?s&dark',
-    url: '#/implementation-plan-results'
+    url: IS_PAGES_DEPLOY ? '#/implementation-plan-results' : 'implementation-plan-results'
   },
   {
     title: 'Результаты обработки измерительной информации по КО',
     path: '#',
-    url: '#/measurement-information-processing'
+    url: IS_PAGES_DEPLOY ? '#/measurement-information-processing' : 'measurement-information-processing'
   },
   {
     title: 'Вычислительные процессы и загрузка вычислительных средств',
     path: '#',
-    url: '#/computing'
+    url: IS_PAGES_DEPLOY ? '#/computing' : 'computing'
   },
   {
     title: 'Информационное взаимодействие АЦУК-М',
     path: '#',
-    url: '#/interaction'
+    url: IS_PAGES_DEPLOY ? '#/interaction' : 'interaction'
   }
 
 ]
