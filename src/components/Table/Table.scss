@@ -1,0 +1,71 @@
+@import '../../App.scss';
+
+.table__wrapper {
+    margin: 20px auto 0 20px;
+    height: calc(100vh - $header-height - 60px);
+    overflow-y: auto;
+    overflow-x: auto;
+}
+
+.table {
+    width: 95%;
+
+    tr:last-of-type {
+        border-bottom: none;
+    }
+
+    th {
+        widows: 100%;
+        padding: 3px 5px;
+        text-align: left;
+        align-self: center;
+        border-right: 1px solid rgba(0, 0, 0, 0.331);
+        font-size: 20px;
+
+        &:first-of-type {
+            padding-right: 15px;
+        }
+
+        &:last-of-type {
+            border-right: none;
+        }
+    }
+
+    &__title {
+        height: 100%;
+        display: flex;
+        align-items: center;
+    }
+
+    &__row9 {
+        display: grid;
+        grid-template-columns: 50px repeat(7, 1fr) 130px;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.331);
+
+    }
+
+    &__row5 {
+        display: grid;
+        grid-template-columns: 150px repeat(4, 1fr);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.331);
+    }
+
+
+
+    &__header {
+        background: #dddddd;
+    }
+
+    &__title {
+        font-size: 20px;
+    }
+
+    &__row {}
+
+    &__data {
+        height: 100%;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+    }
+}
