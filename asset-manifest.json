@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/Elena-Cake/aspos-display/static/css/main.ff7af4fd.css",
-    "main.js": "/Elena-Cake/aspos-display/static/js/main.6888a0e3.js",
+    "main.css": "/Elena-Cake/aspos-display/static/css/main.f6f63c29.css",
+    "main.js": "/Elena-Cake/aspos-display/static/js/main.6cfa5b50.js",
     "index.html": "/Elena-Cake/aspos-display/index.html",
-    "main.ff7af4fd.css.map": "/Elena-Cake/aspos-display/static/css/main.ff7af4fd.css.map",
-    "main.6888a0e3.js.map": "/Elena-Cake/aspos-display/static/js/main.6888a0e3.js.map"
+    "main.f6f63c29.css.map": "/Elena-Cake/aspos-display/static/css/main.f6f63c29.css.map",
+    "main.6cfa5b50.js.map": "/Elena-Cake/aspos-display/static/js/main.6cfa5b50.js.map"
   },
   "entrypoints": [
-    "static/css/main.ff7af4fd.css",
-    "static/js/main.6888a0e3.js"
+    "static/css/main.f6f63c29.css",
+    "static/js/main.6cfa5b50.js"
   ]
 }
