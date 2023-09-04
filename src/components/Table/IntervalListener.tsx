@@ -4,6 +4,7 @@ import { INFO_DATA, TIME_UPDATE_REPORT_TABLES } from '../../assets/constans';
 import { InfoTextsType, ResType } from '../../types/types';
 import axios from 'axios';
 import InfoText from '../InfoText';
+import { changeDataForFuncState } from '../../assets/helperFunc';
 
 type Props = {
     typeTable?: string
@@ -22,7 +23,11 @@ export default function IntervalListener({ apiURL, typeTable = '' }: Props) {
         try {
             setInfoData(INFO_DATA.loading)
             const { data } = await axios.get(apiURL)
-            setData(data)
+            if (isTypeState) {
+                setData(changeDataForFuncState(data))
+            } else {
+                setData(data)
+            }
         } catch (err) {
             // @ts-ignore
             if (err.code === "ERR_NETWORK") {

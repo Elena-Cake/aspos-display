@@ -88,6 +88,7 @@ const Chart = () => {
             {dataCharts &&
                 <div className='charts'>
                     <p>Данные получены за {date}</p>
+                    <p className='charts__label'>ЦПУ, память</p>
                     <LineChart width={widthCharts} height={heightCharts * 2} data={dataCharts} margin={{ top: 15, right: 20, bottom: 15, left: 10 }}>
                         <Line name="% использования cpu" type="monotone" dataKey="cpu" stroke="#0324ff" strokeWidth={3} r={1} />
                         <Line name="% доступной памяти" type="monotone" dataKey="mem" stroke="#ffb303" strokeWidth={3} r={1} />
@@ -95,6 +96,7 @@ const Chart = () => {
                         <XAxis dataKey="name" />
                         <YAxis width={80} />
                         <Tooltip />
+
                         <Legend verticalAlign="top" height={36} />
                     </LineChart>
                     <LineChart width={widthCharts} height={heightCharts} data={dataCharts} margin={{ top: 15, right: 20, bottom: 15, left: 10 }}>
@@ -102,9 +104,11 @@ const Chart = () => {
                         <CartesianGrid stroke="#ccc" strokeDasharray="5 5" />
                         <XAxis dataKey="name" />
                         <YAxis width={80} />
-                        <Tooltip />
+                        <Tooltip labelStyle={{ width: '500px' }} />
                         <Legend verticalAlign="top" height={36} />
                     </LineChart>
+
+                    <p className='charts__label'>Сеть</p>
                     <AreaChart width={widthCharts} height={heightCharts * 2} data={dataCharts} margin={{ top: 15, right: 20, bottom: 15, left: 10 }}>
                         <Area name="Получено по сети байт" type="monotone" dataKey="res" stroke="#8884d8" fill="#8884d8" strokeWidth={2} />
                         <Area name="Отправлено но сети байт" type="monotone" dataKey="send" stroke="#b00153" fill="#b00153" strokeWidth={2} />
@@ -114,6 +118,8 @@ const Chart = () => {
                         <Tooltip />
                         <Legend verticalAlign="top" height={36} />
                     </AreaChart >
+
+                    <p className='charts__label'>Диск</p>
                     <AreaChart width={widthCharts} height={heightCharts * 2} data={dataCharts} margin={{ top: 15, right: 20, bottom: 15, left: 10 }}>
                         <Area name="Прочитано на диск байт" type="monotone" dataKey="cpu" stroke="#6a01b0" fill="#6a01b0" strokeWidth={2} />
                         <Area name="Записано на диск байт" type="monotone" dataKey="mem" stroke="#e13ffeb9" fill="#e13ffeb9" strokeWidth={2} />

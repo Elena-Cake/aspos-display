@@ -6,6 +6,8 @@ import FrameItem from './components/FrameItem';
 import FuncState from './components/FuncState/FuncState';
 import InfoProcess from './components/InfoProcess/InfoProcess';
 import Chart from './components/Chart.tsx/Chart';
+import InfoText from './components/InfoText';
+import { INFO_DATA } from './assets/constans';
 
 // url to all, path to frame
 export const links = [
@@ -47,13 +49,13 @@ function App() {
         <Routes>
           <Route path='/' element={<Main />} />
           <Route path={links[0].url} element={<FuncState />} />
+          <Route path={links[1].url} element={<FrameItem title={links[1].title} path={links[1].path} />} />
           <Route path={links[2].url} element={<InfoProcess />} />
-
           <Route path={links[3].url} element={<Chart />} />
-          {links.map((link, i) => <Route key={i} path={link.url} element={<FrameItem title={link.title} path={link.path} />} />)}
-          {/* <Route path={links[1].url} element={<FrameItem title={links[1].title} path={links[1].path} />} /> */}
+          {/* <Route path={links[4].url} element={<Chart />} /> */}
+
           {/* <Route path={'/test'} element={<FuncState />} /> */}
-          <Route path='*' element={<>Такой страницы не существует</>} />
+          <Route path='*' element={<InfoText infoData={INFO_DATA.notFound} />} />
         </Routes>
       </div>
     </div>

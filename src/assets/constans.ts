@@ -13,5 +13,9 @@ export const INFO_DATA = {
     networkError: {
         text: 'Ошибка при получении данных. Проверьте SSH сертификат, интернет соединение и попробуйте обновить страницу.',
         isError: true
+    },
+    notFound: {
+        text: 'Такой страницы не существует.',
+        isError: true
     }
 }
