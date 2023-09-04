@@ -1,4 +1,45 @@
 .charts {
     width: 90%;
     margin: 30px auto 0;
+
+    // :global {
+    //     background-color: inherit;
+
+    //     .recharts {
+    //         &-text {
+    //             tspan {
+    //                 font-size: 30px !important;
+    //             }
+    //         }
+
+    //         &-surface {
+    //             width: 30px !important;
+    //             height: 30px !important;
+    //         }
+
+    //         &-legend {
+    //             &-icon {
+    //                 width: 30px !important;
+    //                 height: 30px !important;
+    //             }
+
+    //             &-item-text {
+    //                 border: 1px solid red !important;
+    //                 font-size: 25px !important;
+    //             }
+    //         }
+
+    //         &-tooltip {
+    //             &-label {
+    //                 // font-size: 25px;
+    //             }
+
+    //             &-item-list {
+    //                 li {
+    //                     font-size: 25px;
+    //                 }
+    //             }
+    //         }
+    //     }
+    // }
 }

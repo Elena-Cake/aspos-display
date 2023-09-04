@@ -1,12 +1,14 @@
+
 import React from 'react'
 import { LineChart, Line, CartesianGrid, XAxis, YAxis, Tooltip, AreaChart, Area, Legend } from 'recharts';
 import axios from 'axios';
 import { INFO_DATA, TIME_UPDATE_REPORT_CHARTS } from '../../assets/constans';
 import { InfoTextsType, ResType, chartsType, } from '../../types/types';
-import './Charts.scss'
+
+import './Charts.scss';
 import Loading from '../InfoText';
 import InfoText from '../InfoText';
-
+// const s = require('./Charts.module.scss')
 
 let intervalId: NodeJS.Timeout;
 
