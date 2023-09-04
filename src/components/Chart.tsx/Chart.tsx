@@ -17,7 +17,8 @@ const Chart = () => {
     const [infoTime, setInfoTime] = React.useState<string[]>([])
 
     const [widthCharts, setWidthCharts] = React.useState<number>(window.innerWidth * 0.9)
-    const [heightCharts, setHeightCharts] = React.useState<number>(window.innerHeight * 0.1)
+    // const [heightCharts, setHeightCharts] = React.useState<number>(window.innerHeight * 0.1)
+    const heightCharts = window.innerHeight * 0.1
 
     const [date, setDate] = React.useState<string>('null')
     const [dataCharts, setDataCharts] = React.useState<chartsType[] | null>(null)
