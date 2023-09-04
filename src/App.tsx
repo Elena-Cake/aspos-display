@@ -14,27 +14,27 @@ export const links = [
   {
     title: 'Функциональное состояние ОЭС',
     path: 'https://omcc.ru/',
-    url: 'functional-state'
+    url: '#/functional-state'
   },
   {
     title: 'Результаты выполнения плана применения',
     path: 'https://plan.ksoes.ru/?s&dark',
-    url: 'implementation-plan-results'
+    url: '#/implementation-plan-results'
   },
   {
     title: 'Результаты обработки измерительной информации по КО',
     path: '#',
-    url: 'measurement-information-processing'
+    url: '#/measurement-information-processing'
   },
   {
     title: 'Вычислительные процессы и загрузка вычислительных средств',
     path: '#',
-    url: 'computing'
+    url: '#/computing'
   },
   {
     title: 'Информационное взаимодействие АЦУК-М',
     path: '#',
-    url: 'interaction'
+    url: '#/interaction'
   }
 
 ]
