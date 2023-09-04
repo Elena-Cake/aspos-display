@@ -7,16 +7,21 @@ import { INFO_DATA } from '../../assets/constans'
 type Props = {
     data: ResType | null
     isTypeState: boolean
+    infoTexts?: string[]
 }
 
 
-const Table: React.FC<Props> = ({ data, isTypeState }) => {
+const Table: React.FC<Props> = ({ data, isTypeState, infoTexts = [] }) => {
 
 
     return (
         <>
             {data &&
+
                 < div className='table__wrapper'>
+                    <div className='info__container'>
+                        {infoTexts.map(text => <p className='info__text'>{text}</p>)}
+                    </div>
                     <table className='table'>
                         <thead>
                             <tr className={`table__header ${isTypeState ?

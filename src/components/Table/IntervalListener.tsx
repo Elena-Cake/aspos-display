@@ -16,6 +16,8 @@ let intervalId: NodeJS.Timeout;
 export default function IntervalListener({ apiURL, typeTable = '' }: Props) {
 
     const [data, setData] = React.useState<ResType | null>(null)
+
+    const [infoTexts, setInfoTexts] = React.useState<string[]>([])
     const [infoData, setInfoData] = React.useState<InfoTextsType | null>(INFO_DATA.loading)
     const isTypeState = typeTable === 'state'
 
@@ -25,6 +27,7 @@ export default function IntervalListener({ apiURL, typeTable = '' }: Props) {
             const { data } = await axios.get(apiURL)
             if (isTypeState) {
                 setData(changeDataForFuncState(data))
+                setInfoTexts([`Статистика на: ${data.table[0][5].substring(0, 10)}`])
             } else {
                 setData(data)
             }
@@ -66,7 +69,7 @@ export default function IntervalListener({ apiURL, typeTable = '' }: Props) {
     return (
         <>
             {!data && <InfoText infoData={infoData} />}
-            <Table data={data} isTypeState={isTypeState} />
+            <Table data={data} infoTexts={infoTexts} isTypeState={isTypeState} />
         </>
     )
 }

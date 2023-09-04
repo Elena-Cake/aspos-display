@@ -180,3 +180,16 @@ $header-height: 70px;
     color: rgba(252, 1, 1, 1);
   }
 }
+
+.info {
+  &__container {
+    padding: 0;
+    margin: 20px 0 20px 60px;
+  }
+
+  &__text {
+    font-size: 22px;
+    font-weight: 400;
+    text-align: left;
+  }
+}

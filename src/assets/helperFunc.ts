@@ -8,7 +8,7 @@ export const changeDataForFuncState = (data: ResType): ResType => {
             "Место",
             "Модель",
             "Код",
-            "Дата", //new column
+            // "Дата", //new column
             "3акат",
             "Рассвет",
             "Обновлено",
@@ -17,7 +17,7 @@ export const changeDataForFuncState = (data: ResType): ResType => {
         table: data.table.map(arr => {
             return [
                 arr[0], arr[1], arr[2], arr[3], arr[4],
-                arr[5].substring(0, 10), //get date
+                // arr[5].substring(0, 10), //get date
                 arr[5].substring(10),
                 arr[6].substring(10),
                 arr[7]?.replace('T', ' '),

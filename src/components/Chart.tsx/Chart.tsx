@@ -87,7 +87,10 @@ const Chart = () => {
             {!dataCharts && <InfoText infoData={infoData} />}
             {dataCharts &&
                 <div className='charts'>
-                    <p>Данные получены за {date}</p>
+                    <div className='info__container'>
+                        <p className='info__text'>Статистика на: {date}</p>
+                    </div>
+
                     <p className='charts__label'>ЦПУ, память</p>
                     <LineChart width={widthCharts} height={heightCharts * 2} data={dataCharts} margin={{ top: 15, right: 20, bottom: 15, left: 10 }}>
                         <Line name="% использования cpu" type="monotone" dataKey="cpu" stroke="#0324ff" strokeWidth={3} r={1} />
