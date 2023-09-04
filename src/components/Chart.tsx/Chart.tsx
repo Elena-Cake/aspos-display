@@ -6,7 +6,6 @@ import { INFO_DATA, TIME_UPDATE_REPORT_CHARTS } from '../../assets/constans';
 import { InfoTextsType, ResType, chartsType, } from '../../types/types';
 
 import './Charts.scss';
-import Loading from '../InfoText';
 import InfoText from '../InfoText';
 // const s = require('./Charts.module.scss')
 
@@ -15,6 +14,7 @@ let intervalId: NodeJS.Timeout;
 const Chart = () => {
 
     const [infoData, setInfoData] = React.useState<InfoTextsType | null>(INFO_DATA.loading)
+    const [infoTime, setInfoTime] = React.useState<string[]>([])
 
     const [widthCharts, setWidthCharts] = React.useState<number>(window.innerWidth * 0.9)
     const [heightCharts, setHeightCharts] = React.useState<number>(window.innerHeight * 0.1)
@@ -40,6 +40,7 @@ const Chart = () => {
                 write: Number(item[7])
             })
         })
+        setInfoTime([charts[0].name, charts[charts.length - 1].name])
         setDataCharts(charts)
     }
 
@@ -88,7 +89,9 @@ const Chart = () => {
             {dataCharts &&
                 <div className='charts'>
                     <div className='info__container'>
+
                         <p className='info__text'>Статистика на: {date}</p>
+                        {infoTime && <p className='info__text'>{`Интервал времени наблюдения: ${infoTime[0]} - ${infoTime[1]}`}</p>}
                     </div>
 
                     <p className='charts__label'>ЦПУ, память</p>
