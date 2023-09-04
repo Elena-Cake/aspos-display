@@ -38,7 +38,7 @@ export const links = [
   }
 
 ]
-type linksType = typeof links
+// type linksType = typeof links
 
 function App() {
 
