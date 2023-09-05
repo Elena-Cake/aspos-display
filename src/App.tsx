@@ -18,7 +18,7 @@ export const links = [
   },
   {
     title: 'Результаты выполнения плана применения',
-    path: 'https://plan.ksoes.ru/?s&dark',
+    path: 'https://plan.ksoes.ru/?s',
     url: IS_PAGES_DEPLOY ? '#/implementation-plan-results' : 'implementation-plan-results'
   },
   {

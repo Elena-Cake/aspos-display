@@ -21,7 +21,8 @@ export const changeDataForFuncState = (data: ResType): ResType => {
                 arr[5].substring(10),
                 arr[6].substring(10),
                 arr[7]?.replace('T', ' '),
-                arr[8]]
+                arr[8]
+            ]
         })
     }
 

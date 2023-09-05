@@ -33,7 +33,19 @@ const Table: React.FC<Props> = ({ data, isTypeState, infoTexts = [] }) => {
                             {data.table.map((data, i) => {
                                 return <tr key={i} className={`table__row ${isTypeState ?
                                     'table__row9' : 'table__row5'}`}>
-                                    {data.map((item, j) => <th key={j} className='table__data'>{item}</th>)}
+                                    {data.map((item, j) => {
+                                        if (item === 'disconnect') {
+                                            return <th key={j} className='table__data table__data_grey'>{item}</th>
+                                        }
+                                        if (item === 'offline') {
+                                            return <th key={j} className='table__data table__data_red'>{item}</th>
+                                        }
+                                        if (item === 'online') {
+                                            return <th key={j} className='table__data table__data_green'>{item}</th>
+                                        }
+
+                                        return <th key={j} className='table__data'>{item}</th>
+                                    })}
                                 </tr>
                             })}
                         </tbody>
