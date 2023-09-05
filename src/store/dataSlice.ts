@@ -82,7 +82,7 @@ const dataSlice = createSlice({
                     state.isStatReportObservatoryUpdate = true
 
                     const today = new Date()
-                    state.dateReport = today.getDate() + '.' + today.getMonth() + '.' + today.getFullYear()
+                    state.dateReport = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate()
                 }
             })
             .addCase(getObservatoryByStatDay.rejected, (state) => {
