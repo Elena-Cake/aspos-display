@@ -2,7 +2,7 @@ import { InfoTextsType } from './../types/types';
 
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 import { MeansRecordsDayType, ObservatoryRecordsDayType } from '../types/types'
-import { apiKsoes } from '../api'
+import { apiKsoes } from '../api/api'
 import { succsessTexts } from '../assets/succsess'
 import { errorTexts } from '../assets/errors'
 import { INFO_DATA } from '../assets/constans';
@@ -82,7 +82,12 @@ const dataSlice = createSlice({
                     state.isStatReportObservatoryUpdate = true
 
                     const today = new Date()
-                    state.dateReport = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate()
+                    state.dateReport = today.getFullYear() + '-' +
+                        (Number(today.getMonth() + 1) < 10 ? '0' : '') + (today.getMonth() + 1) + '-' +
+                        (Number(today.getDate()) < 10 ? '0' : '') + today.getDate()
+                }
+                if (!action.payload.success) {
+                    state.infoData = { isError: true, text: action.payload.message }
                 }
             })
             .addCase(getObservatoryByStatDay.rejected, (state) => {

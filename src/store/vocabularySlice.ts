@@ -2,7 +2,7 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 import { MeansRecordsAppType, ObservatoryRecordsType, TypesRecordsType } from '../types/types'
 
 import { useAppDispatch } from './store'
-import { apiVocabulary } from '../api'
+import { apiVocabulary } from '../api/api'
 import { errorTexts } from '../assets/errors'
 
 const initialState = {

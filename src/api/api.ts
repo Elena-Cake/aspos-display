@@ -1,6 +1,6 @@
 // import { MeansRecordsDayType, MeansRecordsType, ObservatoryRecordsDayType, ObservatoryRecordsType, TypesRecordsType } from "./types/types"
 import axios from "axios"
-const getToken = () => `token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MTEsImlwIjoiMTcyLjE5LjEwMi4xNjYifQ.5vTjoErzoNquQF9FQGDP2DwR4fNgl5zrMd2RvMo80Xk`
+const getToken = () => `token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MTEsImlwIjoiNzkuMTM5LjEzOS4xNjEifQ.MByVXD9LpLrOJ3YqYE7Z0_d-nZqKzBkyhPnOCmvhfSI`
 
 // KSOES
 // AUTH
