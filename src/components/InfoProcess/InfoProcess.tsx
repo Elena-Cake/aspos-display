@@ -4,7 +4,7 @@ import IntervalListener from '../Table/IntervalListener';
 const InfoProcess = () => {
 
     return (
-        <IntervalListener apiURL='https://api.omcc.ru/api/view/orbmeas' />
+        <IntervalListener />
     )
 }
 
