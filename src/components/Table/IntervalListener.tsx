@@ -24,7 +24,7 @@ export default function IntervalListener({ apiURL, typeTable = '' }: Props) {
     const fetchData = async () => {
         try {
             setInfoData(INFO_DATA.loading)
-            const { data } = await axios.get(apiURL)
+            const { data } = await axios.get(apiURL, { "withCredentials": true })
             if (isTypeState) {
                 setData(changeDataForFuncState(data))
                 setInfoTexts([`Статистика на: ${data.table[0][5].substring(0, 10)}`])
