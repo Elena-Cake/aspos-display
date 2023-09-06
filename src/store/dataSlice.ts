@@ -66,6 +66,7 @@ const dataSlice = createSlice({
                 state.infoData = INFO_DATA.loading
             })
             .addCase(getObservatoryByStatDay.fulfilled, (state, action) => {
+
                 if (action.payload.success) {
                     state.succsess = succsessTexts.UPDATED
                     state.isStatReportObservatoryUpdate = true
@@ -87,7 +88,9 @@ const dataSlice = createSlice({
                         (Number(today.getDate()) < 10 ? '0' : '') + today.getDate()
                 }
                 if (!action.payload.success) {
-                    state.infoData = { isError: true, text: action.payload.message }
+                    state.isStatReportObservatoryUpdate = false
+                    if (action.payload.message === 'No IP identified')
+                        state.infoData = INFO_DATA.wrongToken
                 }
             })
             .addCase(getObservatoryByStatDay.rejected, (state) => {

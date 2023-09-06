@@ -17,11 +17,15 @@ export const INFO_DATA = {
         isError: false
     },
     networkError: {
-        text: 'Ошибка при получении данных. Проверьте SSH сертификат, интернет соединение и попробуйте обновить страницу.',
+        text: 'Ошибка при получении данных. Проверьте SSH сертификат и интернет соединение.',
         isError: true
     },
     notFound: {
         text: 'Такой страницы не существует.',
+        isError: true
+    },
+    wrongToken: {
+        text: 'Недостаточно прав для просмотра.',
         isError: true
     }
 }

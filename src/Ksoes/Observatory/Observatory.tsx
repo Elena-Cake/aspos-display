@@ -166,7 +166,8 @@ const Observatory: React.FC<{ isShow?: boolean }> = ({ isShow = false }) => {
 
     return (
         <>
-            {dataTableTree.length === 0 && <InfoText infoData={infoData} />}
+            {!isStatReportObservatoryUpdate && <InfoText infoData={infoData} />}
+
             {isStatReportObservatoryUpdate &&
                 <section className='observatory'>
                     {/* <p className="observatory__title">Oтчет по обсерваториям за {dateReport}</p> */}
