@@ -2,19 +2,27 @@
   "name": "display-aspos",
   "version": "0.1.0",
   "private": false,
-  "homepage": "https://github.com/Elena-Cake/aspos-display/",
+  "contributors": [
+    {
+      "name": "Elena Sveshnikova",
+      "email": "elenasveshnikova@bk.ru"
+    }
+  ],
   "dependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "@reduxjs/toolkit": "^1.9.5",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "@types/jest": "^27.5.2",
     "@types/react": "^18.2.21",
     "@types/react-dom": "^18.2.7",
+    "antd": "^5.8.6",
     "axios": "^1.5.0",
     "gh-pages": "^6.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-redux": "^8.1.2",
     "react-router-dom": "^6.15.0",
     "react-scripts": "5.0.1",
     "recharts": "^2.8.0",

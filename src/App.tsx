@@ -8,6 +8,7 @@ import InfoProcess from './components/InfoProcess/InfoProcess';
 import Chart from './components/Chart.tsx/Chart';
 import InfoText from './components/InfoText';
 import { INFO_DATA, IS_PAGES_DEPLOY } from './assets/constans';
+import ShowObservatory from './Ksoes/ShowObservatory/ShowObservatory';
 
 // url to all, path to frame
 export const links = [
@@ -18,7 +19,7 @@ export const links = [
   },
   {
     title: 'Результаты выполнения плана применения',
-    path: 'https://plan.ksoes.ru/?s&dark',
+    path: 'https://plan.ksoes.ru/?s',
     url: IS_PAGES_DEPLOY ? '#/implementation-plan-results' : 'implementation-plan-results'
   },
   {
@@ -52,7 +53,7 @@ function App() {
           <Route path={links[1].url} element={<FrameItem title={links[1].title} path={links[1].path} />} />
           <Route path={links[2].url} element={<InfoProcess />} />
           <Route path={links[3].url} element={<Chart />} />
-          {/* <Route path={links[4].url} element={<Chart />} /> */}
+          <Route path={links[4].url} element={<ShowObservatory />} />
 
           {/* <Route path={'/test'} element={<FuncState />} /> */}
           <Route path='*' element={<InfoText infoData={INFO_DATA.notFound} />} />
@@ -73,10 +74,7 @@ const Main: React.FC<{}> = () => {
           onClick={() => window.open(link.url)}
         >{link.title} </Link>)
       }
-      {/* !!!!test */}
-      {/* <Link to={'/'} className={`link link__test`}
-        onClick={() => window.open('/test')}
-      >test chart </Link> */}
+
     </div>
   </div>
 }

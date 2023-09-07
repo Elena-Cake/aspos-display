@@ -5,15 +5,15 @@ import { InfoTextsType, ResType } from '../../types/types';
 import axios from 'axios';
 import InfoText from '../InfoText';
 import { changeDataForFuncState } from '../../assets/helperFunc';
+import { apiOMCC } from '../../api/api';
 
 type Props = {
     typeTable?: string
-    apiURL: string
 }
 
 let intervalId: NodeJS.Timeout;
 
-export default function IntervalListener({ apiURL, typeTable = '' }: Props) {
+export default function IntervalListener({ typeTable = '' }: Props) {
 
     const [data, setData] = React.useState<ResType | null>(null)
 
@@ -24,13 +24,23 @@ export default function IntervalListener({ apiURL, typeTable = '' }: Props) {
     const fetchData = async () => {
         try {
             setInfoData(INFO_DATA.loading)
-            const { data } = await axios.get(apiURL)
+
             if (isTypeState) {
+                const { data } = await axios.get(`https://api.omcc.ru/api/view/state`, { "withCredentials": true })
                 setData(changeDataForFuncState(data))
                 setInfoTexts([`Статистика на: ${data.table[0][5].substring(0, 10)}`])
             } else {
+                const { data } = await axios.get(`https://api.omcc.ru/api/view/orbmeas`, { "withCredentials": true })
                 setData(data)
             }
+            // if (isTypeState) {
+            //     const data = await apiOMCC.getFuncStateData
+            //     setData(changeDataForFuncState(data))
+            //     setInfoTexts([`Статистика на: ${data.table[0][5].substring(0, 10)}`])
+            // } else {
+            //     const data = await apiOMCC.getInfoProcess
+            //     setData(data)
+            // }
         } catch (err) {
             // @ts-ignore
             if (err.code === "ERR_NETWORK") {

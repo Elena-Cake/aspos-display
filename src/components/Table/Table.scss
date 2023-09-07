@@ -66,5 +66,19 @@
         font-weight: 500;
         display: flex;
         align-items: center;
+
+        &_green {
+            background-color: hsla(123, 96%, 69%, 0.5);
+        }
+
+        &_grey {
+            background-color: hsla(0, 0%, 23%, 0.2);
+        }
+
+        &_red {
+            background-color: hsla(0, 96%, 69%, 0.5);
+        }
     }
+
+
 }

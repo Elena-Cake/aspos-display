@@ -6,6 +6,7 @@ type Props = {
 }
 
 export default function InfoText({ infoData }: Props) {
+
     return (
         <>{infoData &&
             <div className='loading'>
