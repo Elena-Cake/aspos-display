@@ -27,6 +27,10 @@ export const INFO_DATA = {
     wrongToken: {
         text: 'Недостаточно прав для просмотра.',
         isError: true
+    },
+    wrongRes: {
+        text: 'Ошибка на стороне сервера',
+        isError: true
     }
 }
 

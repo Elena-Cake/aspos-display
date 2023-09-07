@@ -74,10 +74,7 @@ const Main: React.FC<{}> = () => {
           onClick={() => window.open(link.url)}
         >{link.title} </Link>)
       }
-      {/* !!!!test */}
-      {/* <Link to={'/'} className={`link link__test`}
-        onClick={() => window.open('/test')}
-      >test chart </Link> */}
+
     </div>
   </div>
 }

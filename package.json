@@ -2,6 +2,12 @@
   "name": "display-aspos",
   "version": "0.1.0",
   "private": false,
+  "contributors": [
+    {
+      "name": "Elena Sveshnikova",
+      "email": "elenasveshnikova@bk.ru"
+    }
+  ],
   "dependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@reduxjs/toolkit": "^1.9.5",
