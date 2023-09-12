@@ -26,11 +26,13 @@ export default function IntervalListener({ typeTable = '' }: Props) {
             setInfoData(INFO_DATA.loading)
 
             if (isTypeState) {
-                const { data } = await axios.get(`https://api.omcc.ru/api/view/state`, { "withCredentials": true })
+                // const { data } = await axios.get(`https://api_o.ksoes.ru/api/view/state`, { "withCredentials": true })
+                const data = await apiOMCC.getFuncStateData()
                 setData(changeDataForFuncState(data))
                 setInfoTexts([`Статистика на: ${data.table[0][5].substring(0, 10)}`])
             } else {
-                const { data } = await axios.get(`https://api.omcc.ru/api/view/orbmeas`, { "withCredentials": true })
+                // const { data } = await axios.get(`https://api_o.ksoes.ru/api/view/orbmeas`, { "withCredentials": true })
+                const data = await apiOMCC.getInfoProcess()
                 setData(data)
             }
             // if (isTypeState) {

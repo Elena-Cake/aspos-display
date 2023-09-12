@@ -66,7 +66,7 @@ const dataSlice = createSlice({
                 state.infoData = INFO_DATA.loading
             })
             .addCase(getObservatoryByStatDay.fulfilled, (state, action) => {
-
+                console.log(action.payload)
                 if (action.payload.success) {
                     state.succsess = succsessTexts.UPDATED
                     state.isStatReportObservatoryUpdate = true
@@ -76,7 +76,10 @@ const dataSlice = createSlice({
                     // if (action.payload.records.filter(item => item.count !== 0).length === 0) {
                     //     state.infoData = INFO_DATA.notFoundData
                     // } else {
+
                     state.observatoryDay = action.payload.records.filter(item => item.count !== 0)
+                    // state.observatoryDay = action.payload.records
+
                     // }
                     // state.observatoryDay = action.payload.records.filter(item => item.count !== 0)
                     // state.observatoryDay = action.payload.records

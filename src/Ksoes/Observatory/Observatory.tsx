@@ -76,13 +76,12 @@ const Observatory: React.FC<{ isShow?: boolean }> = ({ isShow = false }) => {
     useEffect(() => {
 
         if (observatoryDay && observatoryDaySender) {
-
             // по типам сообщенй
             const dataTable: TreeTableTypeMessages[] = observatoryDay.map((data, i) => {
                 return {
                     key: i,
                     id: data.id_observatory,
-                    name: String(observatory[data.id_observatory]),
+                    name: 'String(observatory[data.id_observatory])',
                     typeResiv: checkNameType(types.find(type => type.id === data.id_type)?.name || 'Не найден'),
                     countResiv: data.count,
                     typeSender: '',
@@ -111,7 +110,6 @@ const Observatory: React.FC<{ isShow?: boolean }> = ({ isShow = false }) => {
 
             // @ts-ignore
             dataTable.sort((a, b) => a.id - b.id)
-
             // @ts-ignore
             setDataTableTree([...dataTable])
         }

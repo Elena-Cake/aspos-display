@@ -10,6 +10,7 @@ const instance = axios.create({
     baseURL: 'https://ares.ksoes.ru',
     withCredentials: true,
 })
+
 const BASE_API = 'view.php?act=upload_files&name=info'
 // const BASE_API = 'ares.php?act=upload_files&name=info'
 
@@ -59,11 +60,11 @@ export const apiKsoes = {
                 return res.data
             })
     },
-
     // resipient
     // https://ares.ksoes.ru/api.php?act=upload_files&name=group&get=stat_day&group=observatory
     getObservatoryByStatDay() {
         return instance.get<DataResType<ObservatoryRecordsDayType>>(`${BASE_API_RESIPIENT}&group=observatory`)
+            // return instance.get<DataResType<ObservatoryRecordsDayType>>(`api.php?name=group&act=upload_files&get=stat_day&group=observatory&date_end=2023-09-01&date_start=2022-07-01&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MTEsImlwIjoiMTcyLjE5LjEwMi4xNjYifQ.5vTjoErzoNquQF9FQGDP2DwR4fNgl5zrMd2RvMo80Xk`)
             .then(res => {
                 return res.data
             })
@@ -71,7 +72,7 @@ export const apiKsoes = {
 
     // https://ares.ksoes.ru/api.php?act=upload_files&name=group&get=stat_day&group=mean
     getMeansByStatDay() {
-        return instance.get<DataResType<MeansRecordsDayType>>(`${BASE_API_RESIPIENT}&group=mean`)
+        return instance.get<DataResType<MeansRecordsDayType>>(`${BASE_API_RESIPIENT}&group=id`)
             .then(res => {
                 return res.data
             })
@@ -90,14 +91,32 @@ export const apiKsoes = {
 
 // omcc
 const instanceOMCC = axios.create({
-    baseURL: 'https://api.omcc.ru/api/view/',
+    baseURL: 'https://api_o.ksoes.ru/api/view/',
     withCredentials: true,
+    headers: {
+        "Content-Type": "application/json",
+        accept: "application/json",
+        "Set-Cookie": "SameSite=None; Secure",
+    },
 })
+instanceOMCC.defaults.withCredentials = true
 
+
+const url = 'https://api_o.ksoes.ru/api/view/'
 
 export const apiOMCC = {
     // https://api.omcc.ru/api/view/state
-    getFuncStateData() {
+    getFuncStateData: async () => {
+        // const res = await fetch(`${url}state`, {
+        //     credentials: "include",
+        //     headers: {
+        //         "Content-Type": "application/json",
+        //         accept: "application/json",
+        //         "Set-Cookie": "SameSite=None; Secure",
+        //     },
+        // })
+        // const res1 = await res.json()
+        // return res1
         return instanceOMCC.get(`state`)
             .then(res => {
                 return res.data
