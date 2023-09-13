@@ -20,7 +20,7 @@ const Observatory: React.FC<{ isShow?: boolean }> = ({ isShow = false }) => {
     const infoData = useAppSelector(s => s.dataSlice.infoData)
 
     const types = useAppSelector(s => s.vocabularySlice.types)
-    const observatory = useAppSelector(s => s.vocabularySlice.observatory)
+    const observatories = useAppSelector(s => s.vocabularySlice.observatory)
     const means = useAppSelector(s => s.vocabularySlice.means)
 
     const observatoryDay = useAppSelector(s => s.dataSlice.observatoryDay)
@@ -81,7 +81,7 @@ const Observatory: React.FC<{ isShow?: boolean }> = ({ isShow = false }) => {
                 return {
                     key: i,
                     id: data.id_observatory,
-                    name: String(observatory[data.id_observatory]),
+                    name: String(observatories[data.id_observatory]),
                     typeResiv: checkNameType(types.find(type => type.id === data.id_type)?.name || 'Не найден'),
                     countResiv: data.count,
                     typeSender: '',
@@ -90,7 +90,7 @@ const Observatory: React.FC<{ isShow?: boolean }> = ({ isShow = false }) => {
             })
             observatoryDaySender.forEach((data, i) => {
                 const observatory = dataTable.find(item => item.id === data.id_observatory)
-                console.log(observatory)
+
                 if (observatory) {
                     observatory.typeSender = checkNameType(types.find(type => type.id === data.id_type)?.name || 'Не найден')
                     observatory.countSender = data.count
@@ -99,8 +99,7 @@ const Observatory: React.FC<{ isShow?: boolean }> = ({ isShow = false }) => {
                     dataTable.push({
                         key: j,
                         id: data.id_observatory,
-                        // @ts-ignore
-                        name: String(observatory[data.id_observatory]),
+                        name: String(observatories[data.id_observatory]),
                         typeResiv: '',
                         countResiv: undefined,
                         typeSender: checkNameType(types.find(type => type.id === data.id_type)?.name || 'Не найден'),
