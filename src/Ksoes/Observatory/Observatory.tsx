@@ -81,7 +81,7 @@ const Observatory: React.FC<{ isShow?: boolean }> = ({ isShow = false }) => {
                 return {
                     key: i,
                     id: data.id_observatory,
-                    name: 'String(observatory[data.id_observatory])',
+                    name: String(observatory[data.id_observatory]),
                     typeResiv: checkNameType(types.find(type => type.id === data.id_type)?.name || 'Не найден'),
                     countResiv: data.count,
                     typeSender: '',
@@ -90,6 +90,7 @@ const Observatory: React.FC<{ isShow?: boolean }> = ({ isShow = false }) => {
             })
             observatoryDaySender.forEach((data, i) => {
                 const observatory = dataTable.find(item => item.id === data.id_observatory)
+                console.log(observatory)
                 if (observatory) {
                     observatory.typeSender = checkNameType(types.find(type => type.id === data.id_type)?.name || 'Не найден')
                     observatory.countSender = data.count

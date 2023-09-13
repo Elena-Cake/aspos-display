@@ -66,7 +66,7 @@ const dataSlice = createSlice({
                 state.infoData = INFO_DATA.loading
             })
             .addCase(getObservatoryByStatDay.fulfilled, (state, action) => {
-                console.log(action.payload)
+
                 if (action.payload.success) {
                     state.succsess = succsessTexts.UPDATED
                     state.isStatReportObservatoryUpdate = true
