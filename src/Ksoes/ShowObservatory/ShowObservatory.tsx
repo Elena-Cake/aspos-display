@@ -6,7 +6,6 @@ import {
   getMeans,
   getObservatory,
   getTypes,
-  setCatalogs,
 } from "../../store/vocabularySlice";
 import {
   getMeansByStatDay,
