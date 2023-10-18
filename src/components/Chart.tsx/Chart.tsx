@@ -61,7 +61,7 @@ const Chart = () => {
   const fetchData = async () => {
     try {
       setInfoData(INFO_DATA.loading);
-      const { data } = await apiOMCC.getCoputing();
+      const data = await apiOMCC.getCoputing();
       changeDataStructure(data as ResType);
       // setData(data)
     } catch (err) {

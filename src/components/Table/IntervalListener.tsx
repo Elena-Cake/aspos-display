@@ -27,11 +27,11 @@ export default function IntervalListener({ typeTable = "" }: Props) {
       setInfoData(INFO_DATA.loading);
 
       if (isTypeState) {
-        const { data } = await apiOMCC.getFuncStateData();
+        const data = await apiOMCC.getFuncStateData();
         setData(changeDataForFuncState(data));
         setInfoTexts([`Статистика на: ${data.table[0][5].substring(0, 10)}`]);
       } else {
-        const { data } = await apiOMCC.getInfoProcess();
+        const data = await apiOMCC.getInfoProcess();
         setData(data);
       }
       // if (isTypeState) {
