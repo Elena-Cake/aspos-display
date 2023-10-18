@@ -9,6 +9,7 @@ import { getMeansByStatDay, getObservatoryByStatDay, getObservatoryByStatDaySend
 const ShowObservatory: React.FC = () => {
 
     const dispatch = useAppDispatch()
+
     React.useEffect(() => {
         if (localStorage.getItem('catalogTypes')) {
             dispatch(setCatalogs())
