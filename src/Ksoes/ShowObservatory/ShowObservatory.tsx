@@ -24,9 +24,9 @@ const ShowObservatory: React.FC = () => {
 
     }, [])
     return (
-        <>
+        <div className="table__wrapper">
             <Observatory isShow={true} />
-        </>
+        </div>
     )
 }
 

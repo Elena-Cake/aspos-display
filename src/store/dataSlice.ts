@@ -76,7 +76,10 @@ const dataSlice = createSlice({
                     // if (action.payload.records.filter(item => item.count !== 0).length === 0) {
                     //     state.infoData = INFO_DATA.notFoundData
                     // } else {
+
                     state.observatoryDay = action.payload.records.filter(item => item.count !== 0)
+                    // state.observatoryDay = action.payload.records
+
                     // }
                     // state.observatoryDay = action.payload.records.filter(item => item.count !== 0)
                     // state.observatoryDay = action.payload.records

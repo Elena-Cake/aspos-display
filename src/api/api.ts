@@ -103,6 +103,8 @@ const instanceOMCC = axios.create({
   withCredentials: true,
 });
 
+const url = "https://api_o.ksoes.ru/api/view/";
+
 export const apiOMCC = {
   getFuncStateData() {
     return instanceOMCC.get(`state`).then((res) => {

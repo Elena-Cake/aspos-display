@@ -1,10 +1,14 @@
 @import '../../App.scss';
 
 .table__wrapper {
-    margin: 20px auto 0 20px;
+
+    margin: 20px 1% 0 2%;
     height: calc(100vh - $header-height - 60px);
-    overflow-y: auto;
-    overflow-x: auto;
+
+    &_overflow {
+        overflow-y: auto;
+        overflow-x: auto;
+    }
 }
 
 .table {
