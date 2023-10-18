@@ -1,33 +1,35 @@
 import React from "react";
-import './ShowObservatory.scss';
+import "./ShowObservatory.scss";
 import Observatory from "../Observatory/Observatory";
 import { useAppDispatch } from "../../store/store";
-import { getMeans, getObservatory, getTypes, setCatalogs } from "../../store/vocabularySlice";
-import { getMeansByStatDay, getObservatoryByStatDay, getObservatoryByStatDaySender } from "../../store/dataSlice";
-
+import {
+  getMeans,
+  getObservatory,
+  getTypes,
+  setCatalogs,
+} from "../../store/vocabularySlice";
+import {
+  getMeansByStatDay,
+  getObservatoryByStatDay,
+  getObservatoryByStatDaySender,
+} from "../../store/dataSlice";
 
 const ShowObservatory: React.FC = () => {
+  const dispatch = useAppDispatch();
 
-    const dispatch = useAppDispatch()
-
-    React.useEffect(() => {
-        if (localStorage.getItem('catalogTypes')) {
-            dispatch(setCatalogs())
-        } else {
-            dispatch(getTypes())
-            dispatch(getObservatory())
-            dispatch(getMeans())
-        }
-        dispatch(getObservatoryByStatDay())
-        dispatch(getMeansByStatDay())
-        dispatch(getObservatoryByStatDaySender())
-
-    }, [])
-    return (
-        <div className="table__wrapper">
-            <Observatory isShow={true} />
-        </div>
-    )
-}
+  React.useEffect(() => {
+    dispatch(getTypes());
+    dispatch(getObservatory());
+    dispatch(getMeans());
+    dispatch(getObservatoryByStatDay());
+    dispatch(getMeansByStatDay());
+    dispatch(getObservatoryByStatDaySender());
+  }, []);
+  return (
+    <div className="table__wrapper">
+      <Observatory isShow={true} />
+    </div>
+  );
+};
 
 export default ShowObservatory;
