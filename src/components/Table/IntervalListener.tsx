@@ -2,7 +2,6 @@ import React from "react";
 import Table from "./Table";
 import { INFO_DATA, TIME_UPDATE_REPORT_TABLES } from "../../assets/constans";
 import { InfoTextsType, ResType } from "../../types/types";
-import axios from "axios";
 import InfoText from "../InfoText";
 import { changeDataForFuncState } from "../../assets/helperFunc";
 import { apiOMCC } from "../../api/api";
